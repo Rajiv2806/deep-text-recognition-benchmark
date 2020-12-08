@@ -1,3 +1,4 @@
+# Testing Git Commit
 import string
 import argparse
 
@@ -11,7 +12,7 @@ from dataset import RawDataset, AlignCollate
 from model import Model
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
-
+# Test 2
 def demo(opt):
     """ model configuration """
     if 'CTC' in opt.Prediction:
@@ -19,7 +20,7 @@ def demo(opt):
     else:
         converter = AttnLabelConverter(opt.character)
     opt.num_class = len(converter.character)
-
+    # Test 3
     if opt.rgb:
         opt.input_channel = 3
     model = Model(opt)
